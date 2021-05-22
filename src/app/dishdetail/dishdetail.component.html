@@ -7,16 +7,16 @@
     fxLayoutGap.xs="0">
 
   <div fxFlex="40">
-    <div fxFlex *ngIf="selectedDish">
+    <div fxFlex *ngIf="dish">
         <mat-card>
           <mat-card-header>
             <mat-card-title>
-              <h3>{{selectedDish.name | uppercase}}</h3>
+              <h3>{{dish.name | uppercase}}</h3>
             </mat-card-title>
           </mat-card-header>
-          <img mat-card-image src={{selectedDish.image}} alt={{selectedDish.name}}>
+          <img mat-card-image src={{dish.image}} alt={{dish.name}}>
           <mat-card-content>
-            <p>{{selectedDish.description}}
+            <p>{{dish.description}}
             </p>
           </mat-card-content>
           <mat-card-actions>
@@ -30,10 +30,10 @@
   <div fxFlex="40">
       <h2>Comments</h2>
     <mat-list *ngFor="let c of dish.comments">
-        <mat-list-item >
-          <h4 matLine>{{c.comment}}</h4>
+        <mat-list-item >        
+           <h4 matLine>{{c.comment}}</h4>
           <p matLine>{{c.rating}} Stars</p>
-          <p matLine><span>--{{c.author}}</span> {{c.date | date}}</p>
+          <p matLine><span>--{{c.author}} {{c.date }}</span></p>
         </mat-list-item>
       </mat-list>
   </div>
