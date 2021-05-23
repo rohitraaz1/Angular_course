@@ -11,6 +11,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms'; 
+
+
+
 
 import 'hammerjs';
 //services
@@ -41,8 +48,10 @@ import { LoginComponent } from './login/login.component';
     LoginComponent
   ],
   imports: [
-    MatDialogModule,
     BrowserModule,
+    MatFormFieldModule, 
+    MatInputModule,
+    MatCheckboxModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     FlexLayoutModule,
@@ -50,11 +59,15 @@ import { LoginComponent } from './login/login.component';
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule,
+    FormsModule
   ],
   exports: [ RouterModule ],
+  entryComponents: [
+    LoginComponent
+],
   providers: [DishService,PromotionService,LeaderService],
-  entryComponents: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

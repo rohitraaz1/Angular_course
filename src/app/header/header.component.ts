@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
 
 @Component({
@@ -9,12 +10,13 @@ import { LoginComponent } from '../login/login.component';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(public dialog: MatDialog ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
-  openLoginForm(){
-    this.dialog.open(LoginComponent,{width: '500px', height: '450px'})
+
+  openLoginForm() {
+    this.dialog.open(LoginComponent, {width: '500px', height: '450px'});
   }
 
 }
