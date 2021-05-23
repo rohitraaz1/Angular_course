@@ -48,6 +48,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule
   ],
   exports: [ RouterModule ],
-  providers: [DishService]
+  providers: [DishService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
