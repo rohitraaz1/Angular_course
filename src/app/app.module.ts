@@ -8,18 +8,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 
-import { routes } from './app-routing/routes';
-
 
 import 'hammerjs';
+//services
+import { DishService } from './services/dish.service';
+
+//components
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
-
-import { DishService } from './services/dish.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
@@ -46,12 +45,9 @@ import { HomeComponent } from './home/home.component';
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
-    CommonModule,
-    AppRoutingModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   exports: [ RouterModule ],
-  providers: [DishService],
-  bootstrap: [AppComponent]
+  providers: [DishService]
 })
 export class AppModule { }
