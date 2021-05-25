@@ -19,9 +19,12 @@
             <p>{{dish.description}}</p>
           </mat-card-content>
           <mat-card-actions>
+            <button mat-button [routerLink]="['/dishdetail', prev]"><i class="fas fa-chevron-left fa-lg"></i></button>
             <button mat-button (click)="goBack()">BACK</button>
             <button mat-button>LIKE</button>
             <button mat-button>SHARE</button>
+            <span class="flex-spacer"></span>
+        <button mat-button [routerLink]="['/dishdetail', next]"><i class="fas fa-chevron-right fa-lg"></i></button>
           </mat-card-actions>
         </mat-card>
       </div>
