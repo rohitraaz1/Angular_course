@@ -21,8 +21,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import {MatSliderModule} from '@angular/material/slider';
 
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from './shared/baseurl';
 
 
 import 'hammerjs';
@@ -30,6 +30,8 @@ import 'hammerjs';
 import { DishService } from './services/dish.service';
 import { LeaderService } from './services/leader.service';
 import { PromotionService } from './services/promotion.service';
+import { ProcessHTTPMsgService  } from './services/process-httpmsg.service';
+
 
 //components
 import { MenuComponent } from './menu/menu.component';
@@ -55,6 +57,7 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MatSliderModule,
     MatProgressSpinnerModule,
     MatSlideToggleModule,
@@ -78,7 +81,12 @@ import { LoginComponent } from './login/login.component';
   entryComponents: [
     LoginComponent
 ],
-  providers: [DishService,PromotionService,LeaderService],
+  providers: [DishService,
+              PromotionService,
+              LeaderService,
+              ProcessHTTPMsgService,
+              {provide: 'BaseURL', useValue: baseURL}
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
