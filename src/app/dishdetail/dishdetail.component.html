@@ -78,7 +78,7 @@
 <div [hidden]="dish || dderrorMess">
   <mat-spinner></mat-spinner><h4>Loading . . . Please wait!</h4>
 </div>
-<div fxFlex>
+<div fxFlex *ngIf="dderrorMess">
   <h2>Error</h2>
   <h4>{{ dderrorMess }}</h4>
 </div>
