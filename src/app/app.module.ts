@@ -42,6 +42,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { HightlightDirective } from './directives/hightlight.directive';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { LoginComponent } from './login/login.component';
     ContactComponent,
     AboutComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    HightlightDirective
   ],
   imports: [
     BrowserModule,
